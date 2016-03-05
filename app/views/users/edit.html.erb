@@ -1,0 +1,6 @@
+<h1>Edit <%= @user.name %> </h1>
+  <%= form_for @user do |f| %> <!-- Create form for user object -->
+    Name: <%= f.text_field :name %> <!-- Create a text field that sends its value under the key name-->
+    Email: <%= f.text_field :email %><!-- Create a text field that sends its value under the key email -->
+    <%= f.submit %> <!-- Create submit button-->
+  <% end %>

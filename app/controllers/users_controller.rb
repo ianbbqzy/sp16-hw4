@@ -22,6 +22,22 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) # Query for the user with the id that is in params
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update user_params
+    redirect_to action: 'index'
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to action: 'index'
+  end
+
   private
 
   def user_params
